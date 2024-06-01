@@ -16,75 +16,70 @@
       background-size: cover;
     }
   </style>
-</head>
-<body style="font-family: 'Poppins', sans-serif">
-  <nav class="flex justify-between items-center p-5 bg-white bg-opacity-75 backdrop-blur-md shadow-md sticky top-0 z-10">
-    <div class="logo text-black font-semibold italic antialiased">
-      <a href="#" id="home-link">Nasrull</a>
-    </div>
-    <div class="hidden md:flex">
-      <ul class="flex gap-x-5 text-black font-semibold antialiased">
-        <li><a href="#parallax-section" class="hover:text-yellow-400 scroll-link">Home</a></li>
-        <li><a href="#about" class="hover:text-yellow-400 scroll-link">About</a></li>
-        <li><a href="#" class="hover:text-yellow-400">Contact</a></li>
+  </head>
+  <body style="font-family: 'Poppins', sans-serif">
+    <nav class="container flex justify-between items-center p-5 bg-white bg-opacity-75 backdrop-blur-md shadow-md sticky top-0 z-10">
+      <div class="logo text-black font-semibold italic antialiased">
+        <a href="#" id="home-link">Nasrull</a>
+      </div>
+      <div class="hidden md:flex">
+        <ul class="flex gap-x-5 text-black font-semibold antialiased">
+          <li><a href="#parallax-section" class="hover:text-yellow-400 scroll-link">Home</a></li>
+          <li><a href="#about" class="hover:text-yellow-400 scroll-link">About</a></li>
+          <li><a href="#contact" class="hover:text-yellow-400 scroll-link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="md:hidden">
+        <button id="nav-toggle" class="focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden sticky top-0 z-10 bg-white bg-opacity-75 backdrop-blur-md shadow-md">
+      <ul class="flex flex-col items-center">
+        <li class="py-2"><a href="#parallax-section" class="hover:text-yellow-400 scroll-link">Home</a></li>
+        <li class="py-2"><a href="#about" class="hover:text-yellow-400 scroll-link">About</a></li>
+        <li class="py-2"><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
       </ul>
     </div>
-    <div class="md:hidden">
-      <button id="nav-toggle" class="focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
-  </nav>
-  <div id="mobile-menu" class="hidden md:hidden sticky top-0 z-10 bg-white bg-opacity-75 backdrop-blur-md shadow-md">
-    <ul class="flex flex-col items-center">
-      <li class="py-2"><a href="#parallax-section" class="hover:text-yellow-400 scroll-link">Home</a></li>
-      <li class="py-2"><a href="#about" class="hover:text-yellow-400 scroll-link">About</a></li>
-      <li class="py-2"><a href="#" class="hover:text-yellow-400">Contact</a></li>
-    </ul>
-  </div>
-  <section id="parallax-section" class="xl h-screen bg-cover bg-no-repeat bg-center flex items-center justify-center" style="background-image: url('/img/bg.jpg');">
-    <div class="max-w-xl mx-auto text-center px-4 md:px-0">
-      <h1 class="my-3 font-semibold text-gray-900 text-3xl md:text-5xl">Hello there!</h1>
-      <p class="font-semibold text-black">Muhammad Ahsan Nasrulloh Here!</p>
-      <p><a href="#about" class="underline hover:text-orange-500 scroll-link" id="see-more-link">See more</a></p>
-    </div>
-  </section>
-  <section id="about" class="h-screen flex items-center justify-center bg-gray-100">
-    <div class="text-center px-4 md:px-0">
-      <h2 class="text-3xl md:text-4xl font-semibold mb-4">About Me</h2>
-      <p class="max-w-xl mx-auto">This is an example of a section below the parallax section. You can add more content here to make your website more informative and engaging.</p>
-    </div>
-  </section>
-  <script>
-    document.querySelectorAll('.scroll-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('parallax-section').classList.add('parallax');
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-        document.getElementById('mobile-menu').classList.add('hidden');
-      });
-    });
+    <section id="parallax-section" class="xl h-screen bg-cover bg-no-repeat bg-center flex items-center justify-center" style="background-image: url('/img/bg.jpg');">
+      <div class="max-w-xl mx-auto text-center px-4 md:px-0">
+        <h1 class="my-3 font-semibold text-gray-900 text-3xl md:text-5xl">Hello there!</h1>
+        <p class="font-semibold text-black">Muhammad Ahsan Nasrulloh Here!</p>
+        <p><a href="#about" class="underline hover:text-orange-500 scroll-link" id="see-more-link">See more</a></p>
+      </div>
+    </section>
+    <section id="about" class="h-screen flex items-center justify-start bg-gray-100">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full px-4">
+        <div class="text-start md:px-0 ml-5">
+          <h2 class="text-3xl md:text-4xl font-semibold mb-4">About Me</h2>
+          <p class="max-w-xl">Hello there! My name is Muhammad Ahsan Nasrulloh. I'm from Subang, West Java, Indonesia. I was born on August 28th, 2007, and I am currently studying at SMKN 1 Subang.</p>
+        </div>
+        <div class="flex items-center justify-center">
+          <div class="bg-white shadow-lg rounded-lg p-6">
+            <img src="/img/pp.png" alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto">
+            <h3 class="text-xl font-semibold text-center mt-4">Muhammad Ahsan Nasrulloh</h3>
+            <p class="text-center">Student at SMKN 1 Subang</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="h-screen flex items-center justify-center bg-gray-200">
+      <div class="text-center px-4 md:px-0">
+        <h2 class="text-3xl md:text-4xl font-semibold mb-4">Contact Me</h2>
+        <div class="flex flex-wrap justify-center space-x-4">
+          <a href="mailto:your-email@example.com" class="text-xl text-blue-600 hover:underline">Email</a>
+          <a href="https://wa.me/your-phone-number" class="text-xl text-green-600 hover:underline">WhatsApp</a>
+          <a href="https://www.instagram.com/your-instagram" class="text-xl text-pink-600 hover:underline">Instagram</a>
+          <a href="https://www.tiktok.com/@your-tiktok" class="text-xl text-black hover:underline">TikTok</a>
+          <a href="https://twitter.com/your-twitter" class="text-xl text-blue-400 hover:underline">Twitter</a>
+        </div>
+      </div>
+    </section>
 
-    document.getElementById('home-link').addEventListener('click', function(e) {
-      e.preventDefault();
-      document.getElementById('parallax-section').classList.add('parallax');
-      document.getElementById('parallax-section').scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
-
-    document.getElementById('nav-toggle').addEventListener('click', function() {
-      const menu = document.getElementById('mobile-menu');
-      if (menu.classList.contains('hidden')) {
-        menu.classList.remove('hidden');
-      } else {
-        menu.classList.add('hidden');
-      }
-    });
-  </script>
-</body>
+    
+    <script src="/js/script.js"></script>
+  </body>
 </html>
