@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body style="font-family: 'Poppins', sans-serif">
+  <nav class="flex justify-between items-center p-5 bg-white bg-opacity-75 backdrop-blur-md shadow-md sticky top-0 z-10">
+    <div class="logo text-black font-semibold italic antialiased">
+      <a href="#" id="home-link">Nasrull</a>
+    </div>
+    <div class="hidden md:flex">
+      <ul class="flex gap-x-5 text-black font-semibold antialiased">
+        <li><a href="#parallax-section" class="hover:text-yellow-400 scroll-link">Home</a></li>
+        <li><a href="#about" class="hover:text-yellow-400 scroll-link">About</a></li>
+        <li><a href="#" class="hover:text-yellow-400">Contact</a></li>
+      </ul>
+    </div>
+    <div class="md:hidden">
+      <button id="nav-toggle" class="focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="hidden md:hidden sticky top-0 z-10 bg-white bg-opacity-75 backdrop-blur-md shadow-md">
+    <ul class="flex flex-col items-center">
+      <li class="py-2"><a href="#parallax-section" class="hover:text-yellow-400 scroll-link">Home</a></li>
+      <li class="py-2"><a href="#about" class="hover:text-yellow-400 scroll-link">About</a></li>
+      <li class="py-2"><a href="#" class="hover:text-yellow-400">Contact</a></li>
+    </ul>
+  </div>
+  <section id="parallax-section" class="xl h-screen bg-cover bg-no-repeat bg-center flex items-center justify-center" style="background-image: url('/img/bg.jpg');">
+    <div class="max-w-xl mx-auto text-center px-4 md:px-0">
+      <h1 class="my-3 font-semibold text-gray-900 text-3xl md:text-5xl">Hello there!</h1>
+      <p class="font-semibold text-black">Muhammad Ahsan Nasrulloh Here!</p>
+      <p><a href="#about" class="underline hover:text-orange-500 scroll-link" id="see-more-link">See more</a></p>
+    </div>
+  </section>
+  <section id="about" class="h-screen flex items-center justify-center bg-gray-100">
+    <div class="text-center px-4 md:px-0">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-4">About Me</h2>
+      <p class="max-w-xl mx-auto">This is an example of a section below the parallax section. You can add more content here to make your website more informative and engaging.</p>
+    </div>
+  </section>
+  <script>
+    document.querySelectorAll('.scroll-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('parallax-section').classList.add('parallax');
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    });
+
+    document.getElementById('home-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('parallax-section').classList.add('parallax');
+      document.getElementById('parallax-section').scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+
+    document.getElementById('nav-toggle').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+      } else {
+        menu.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
